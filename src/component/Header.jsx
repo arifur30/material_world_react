@@ -55,7 +55,7 @@ export default function Header() {
               textDecoration: 'none',
             }}
           >
-            LOGOs
+            LOGO
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

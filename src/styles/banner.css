@@ -1,0 +1,26 @@
+.slick-prev,.slick-next{
+    z-index: 111111111111;
+    width: 3rem;
+    height: 3rem;
+    color: white !important;
+    background-color: red !important;
+}
+.slick-next{
+    right: 0;
+}
+.slick-prev{
+    left: 0;
+}
+.slick-prev > polyline,.slick-next > polyline{
+    color: white !important;
+    stroke: white;
+}
+.slick-arrow{
+    display: none;
+    opacity: 0;
+}
+.slick-slider:hover .slick-arrow{
+    display: block;
+    opacity: 1;
+    transition: .9s ease;
+}
