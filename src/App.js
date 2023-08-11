@@ -4,6 +4,7 @@ import Profile from "./pages/Profile";
 import Offers from "./pages/Offers";
 import Header from "./component/Header";
 import Banner from "./pages/Banner";
+import Footer from "./component/Footer";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/profile" element={<Profile/>}></Route>
         <Route path="/offers" element={<Offers/>}></Route>
         </Routes>
+        <Footer/>
       </Router>
     </div>
   );
