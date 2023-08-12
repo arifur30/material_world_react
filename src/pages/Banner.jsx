@@ -19,14 +19,27 @@ const Banner = () => {
     nextArrow: <MdNavigateNext />,
     prevArrow: <GrFormPrevious />,
   };
+  const settings2 = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    nextArrow: <MdNavigateNext />,
+    prevArrow: <GrFormPrevious />,
+  };
 
   return (
-    <div className="banner max-w-screen-xl mx-auto">
+    <div className="banner max-w-screen-lg mx-auto">
       <div className="banner-header">
-        <div className="banner-header-slider grid grid-cols-2 ">
-          <button className="py-4 px-8 bg-red-500 capitalize text-white">top news</button>
-          <div className=" basis-[90%]">
-            <Slider>
+        <div className="banner-header-slider grid grid-cols-10">
+          <button className=" bg-red-500 capitalize text-white col-span-1 col-start-1">top news</button>
+          <div className="col-span-9 mr-2 ps-3 col-start-2 bg-black">
+            <Slider
+            {...settings2}
+            >
               {[
                 {
                   img: "https://rstheme.com/products/html/news24/news-magazine/images/breaking/5.jpg",
@@ -43,11 +56,13 @@ const Banner = () => {
               ].map((element) => {
                 const { img, heading } = element;
                 return (
-                  <div className="flex items-center">
-                    <img src={img} alt="" />
+                  <div className=" text-white">
+                    <div className="flex items-center">
+                    <img src={img} className="max-w-" alt="" />
                     <Link to="/" className="ms-3">
                       {heading}
-                    </Link>
+                    </Link> 
+                    </div>
                   </div>
                 );
               })}

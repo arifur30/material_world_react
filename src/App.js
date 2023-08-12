@@ -7,6 +7,7 @@ import LatestNews from "./component/LatestNews";
 
 import Footer from "./component/Footer";
 import Header2 from "./component/Header2";
+import TopStories from "./component/TopStories";
 
 
 
@@ -14,8 +15,9 @@ function App() {
   return (
     <div>
       <Router>
-       <Header2/>
+       {/* <Header2/> */}
         <Banner />
+        <TopStories />
         <LatestNews/>
         <Routes>
         {/* <Route path="/" element={<Home/>}></Route> */}

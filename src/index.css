@@ -25,6 +25,6 @@ body {
   .facebook,
   .twitter,
   .signal {
-    @apply  flex flex-col items-center justify-center text-white;
+    @apply  flex flex-col items-center justify-center text-white w-[5rem] h-[5rem];
   }
 }
