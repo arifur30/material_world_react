@@ -4,7 +4,7 @@ import { FaTwitter } from "react-icons/fa";
 import { AiOutlineWifi } from "react-icons/ai";
 const LatestNews = () => {
   return (
-    <div className="latest_news flex grid max-w-screen-xl grid-cols-2 py-8 m-auto gap-2">
+    <div className="latest_news grid max-w-screen-xl grid-cols-2 py-8 m-auto gap-2">
       <div className="left-side col-span-7">
         <div className="flex items-center justify-between">
           <h3 className="uppercase text-black text-xl font-bold">
