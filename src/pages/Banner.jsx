@@ -19,26 +19,28 @@ const Banner = () => {
     nextArrow: <MdNavigateNext />,
     prevArrow: <GrFormPrevious />,
   };
-  const settings2 = {
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    nextArrow: <MdNavigateNext />,
-    prevArrow: <GrFormPrevious />,
-  };
+  // const settings2 = {
+  //   infinite: true,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   speed: 100,
+  //   autoplaySpeed: 2000,
+  //   cssEase: "linear",
+  //   nextArrow: <MdNavigateNext />,
+  //   prevArrow: <GrFormPrevious />,
+  // };
 
   return (
     <div className="banner max-w-screen-lg mx-auto">
       <div className="banner-header">
         <div className="banner-header-slider grid grid-cols-10">
           <button className=" bg-red-500 capitalize text-white col-span-1 col-start-1">top news</button>
-          <div className="col-span-9 mr-2 ps-3 col-start-2 bg-black">
+          <div className="col-span-9 mr-2 ps-3 col-start-2 bg-black top-banner">
             <Slider
-            {...settings2}
+            slidesToShow={2}
+            autoplay={true}
+
             >
               {[
                 {
@@ -58,10 +60,10 @@ const Banner = () => {
                 return (
                   <div className=" text-white">
                     <div className="flex items-center">
-                    <img src={img} className="max-w-" alt="" />
-                    <Link to="/" className="ms-3">
+                    <img src={img} className="max-w-full" alt="" />
+                    <a href="/" className="ms-3">
                       {heading}
-                    </Link> 
+                    </a> 
                     </div>
                   </div>
                 );
@@ -71,13 +73,13 @@ const Banner = () => {
         </div>
       </div>
       <div className="mx-auto flex gap-3">
-        <div className="left max-w-[60%]">
+        <div className="banner-left max-w-[60%]">
           <Slider {...settings}>
             {[
               "https://rstheme.com/products/html/news24/news-magazine/images/slider/slide_3.jpg",
               "https://rstheme.com/products/html/news24/news-magazine/images/slider/slide_1.jpg",
               "https://rstheme.com/products/html/news24/news-magazine/images/slider/slide_3.jpg",
-            ].map((img) => {
+            ]?.map((img) => {
               return (
                 <div
                   className="item_ relative"
