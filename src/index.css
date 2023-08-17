@@ -5,7 +5,8 @@
 body {
   margin: 0;
 }
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: red;
   background: white;
 }
@@ -15,9 +16,15 @@ body {
   background: white;
 }
 
-
 @layer base {
   img {
     @apply block;
+  }
+}
+@layer base {
+  .facebook,
+  .twitter,
+  .signal {
+    @apply  flex flex-col items-center justify-center text-white w-[5rem] h-[5rem];
   }
 }
