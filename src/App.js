@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <Router>
-       <Header2/>
+       {/* <Header2/> */}
         <Banner />
         <TopStories />
         <LatestNews/>

@@ -1,5 +1,5 @@
 import React from "react";
-import { BiLogoFacebook,BiMessage } from "react-icons/bi";
+import { BiLogoFacebook, BiMessage } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { FaTwitter } from "react-icons/fa";
 import { AiOutlineWifi } from "react-icons/ai";
@@ -32,15 +32,17 @@ const LatestNews = () => {
           <div className="right-side bg-black text-white p-5 w-[100%]">
             <div className="flex gap-3 items-center text-gray-300 mb-3">
               <div className="flex gap-2 items-center">
-
-                <CgProfile/><p className="">James Bond</p>
-                </div>
-                <div className="flex gap-2 items-center">
-                  <p>50</p>
-                <BiMessage/>
+                <CgProfile />
+                <p className="">James Bond</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <p>50</p>
+                <BiMessage />
               </div>
             </div>
-            <h3 className="text-xl hover:text-red-600 bold mb-3">Migrants Told: Stay In France Or Go Back To Your Country</h3>
+            <h3 className="text-xl hover:text-red-600 bold mb-3">
+              Migrants Told: Stay In France Or Go Back To Your Country
+            </h3>
             <p className="text-gray-400 w-4/6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ex
               dolore sed ipsum eaque similique commodi,ae eos perspiciatis.
@@ -52,59 +54,62 @@ const LatestNews = () => {
             </button>
           </div>
         </div>
-       <div className="flex border-2 mt-5 items-center justify-between p-3">
-       {
-          [
+        <div className="flex border-2 mt-5 items-center justify-between p-3">
+          {[
             {
-              img:'https://rstheme.com/products/html/news24/news-magazine/images/tab/2.jpg',
-              date:'June 28, 2017',
-              title:'to soccer field closed'
+              img: "https://rstheme.com/products/html/news24/news-magazine/images/tab/2.jpg",
+              date: "June 28, 2017",
+              title: "to soccer field closed",
             },
             {
-              img:'https://rstheme.com/products/html/news24/news-magazine/images/tab/3.jpg',
-              date:'June 28, 2017',
-              title:'to soccer field closed'
+              img: "https://rstheme.com/products/html/news24/news-magazine/images/tab/3.jpg",
+              date: "June 28, 2017",
+              title: "to soccer field closed",
             },
             {
-              img:'https://rstheme.com/products/html/news24/news-magazine/images/tab/4.jpg',
-              date:'June 28, 2017',
-              title:'to soccer field closed'
+              img: "https://rstheme.com/products/html/news24/news-magazine/images/tab/4.jpg",
+              date: "June 28, 2017",
+              title: "to soccer field closed",
             },
-            
+
             {
-              img:'https://rstheme.com/products/html/news24/news-magazine/images/tab/5.jpg',
-              date:'June 28, 2017',
-              title:'to soccer field closed'
-            }
-          ].map((element,index,arr)=>{
-            return(
+              img: "https://rstheme.com/products/html/news24/news-magazine/images/tab/5.jpg",
+              date: "June 28, 2017",
+              title: "to soccer field closed",
+            },
+          ].map((element, index, arr) => {
+            return (
               <div className="">
                 <img src={element.img} alt="" />
                 <p className="text-sm text-gray-400 mt-2">{element.date}</p>
-                <h4 className="text-lg font-semiBold capitalize text-md">{element.title}</h4>
+                <h4 className="text-lg font-semiBold capitalize text-md">
+                  {element.title}
+                </h4>
               </div>
-            )
-          })        }
-       </div>
+            );
+          })}
         </div>
-        <div className="right-side ">
-          <div className="social-media">
-            <div className="border-spacing-1 p-3 flex items-center border-2 gap-2 mb-10">
-              <button className="facebook bg-blue-400">
-                <BiLogoFacebook />
-                <p>4033,34 likes</p>
-              </button>
-              <button className="twitter bg-blue-500">
-                <FaTwitter />
-                <p>234,243 followers</p>
-              </button>
-              <button className="signal bg-orange-600">
-                <AiOutlineWifi className=" transform rotate-45 scale-[1.4]"/>
-                <p>234,421 subscriber</p>
-              </button>
-            </div>
-            <img src="https://rstheme.com/products/html/news24/news-magazine/images/add/2.jpg" alt="" />
-         
+      </div>
+      <div className="right-side ">
+        <div className="social-media">
+          <div className="border-spacing-1 p-3 flex items-center border-2 gap-2 mb-10">
+            <button className="facebook bg-blue-400">
+              <BiLogoFacebook />
+              <p>4033,34 likes</p>
+            </button>
+            <button className="twitter bg-blue-500">
+              <FaTwitter />
+              <p>234,243 followers</p>
+            </button>
+            <button className="signal bg-orange-600">
+              <AiOutlineWifi className=" transform rotate-45 scale-[1.4]" />
+              <p>234,421 subscriber</p>
+            </button>
+          </div>
+          <img
+            src="https://rstheme.com/products/html/news24/news-magazine/images/add/2.jpg"
+            alt=""
+          />
         </div>
       </div>
     </div>
