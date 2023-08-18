@@ -18,13 +18,22 @@ body {
 
 @layer base {
   img {
-    @apply block;
+    @apply block max-w-full;
   }
 }
 @layer base {
   .facebook,
   .twitter,
   .signal {
-    @apply  flex flex-col items-center justify-center text-white w-[5rem] h-[5rem];
+    @apply flex flex-col items-center justify-center text-white w-[5rem] h-[5rem];
   }
+}
+@layer base {
+  .top-stories > * {
+    @apply text-white;
+  }
+  .top-stories h4 {
+    @apply capitalize inline-block py-1 px-2 mb-2;
+  }
+  
 }
