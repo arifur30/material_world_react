@@ -32,7 +32,7 @@ const Banner = () => {
   // };
 
   return (
-    <div className="banner max-w-screen-lg mx-auto">
+    <div className="banner max-w-screen-xl mx-auto">
       <div className="banner-header">
         <div className="banner-header-slider grid grid-cols-10">
           <button className=" bg-red-500 capitalize text-white col-span-1 col-start-1">top news</button>

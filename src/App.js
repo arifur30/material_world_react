@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Banner from "./pages/Banner";
 import Offers from "./pages/Offers";
 import Profile from "./pages/Profile";
@@ -6,27 +6,24 @@ import Profile from "./pages/Profile";
 import LatestNews from "./component/LatestNews";
 
 import Footer from "./component/Footer";
-import Header2 from "./component/Header2";
+import Header from "./component/Header";
 import TopStories from "./component/TopStories";
+import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
 
 
 
 function App() {
   return (
-    <div>
-      <Router>
-       {/* <Header2/> */}
-        <Banner />
-        <TopStories />
-        <LatestNews/>
+    <>
+      <BrowserRouter>
+        <Header />
         <Routes>
-        {/* <Route path="/" element={<Home/>}></Route> */}
-        <Route path="/profile" element={<Profile/>}></Route>
-        <Route path="/offers" element={<Offers/>}></Route>
+          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Blogs />} />
         </Routes>
-        <Footer/>
-      </Router>
-    </div>
+      </BrowserRouter>
+    </>
   );
 }
 

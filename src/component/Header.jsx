@@ -1,162 +1,84 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-
-const pages = ['Business', 'Politics', 'Sports', 'Health', 'World', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
-export default function Header() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { AiOutlinePhone } from "react-icons/ai";
+import { FiMail } from "react-icons/fi";
+import { BiMenu } from "react-icons/bi";
+import "../styles/Header.css";
+const Header = () => {
+  const [isNavOpened, setIsNavOpened] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const handleNav = () => {
+    console.log("clicked");
+    setIsNavOpened((prevState) => !prevState);
+    console.log(isNavOpened);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  
+  window.onscroll =(e)=>{
+    window.scrollY > 0 && setIsScrolled(!isScrolled)
+    window.scrollY == 0 && setIsScrolled(!isScrolled);
+  }
+    //  setIsScrolled((prevState) => !prevState);
+     
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
   return (
-    <AppBar position="static" style={{"margin-bottom":"20px"}}>
-      <Container maxWidth="xl"> 
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+    <div className="header">
+      <div className="top-header-section flex items-center justify-between max-w-screen-xl mx-auto py-3">
+        <div className="class">
+          <div className="flex items-center gap-2">
+            <AiOutlinePhone />
+            <p>354215251</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <FiMail />
+          <p>materialworldd@gmail.com</p>
+        </div>
+      </div>
+      <div
+        className={`bg-black ${
+          isScrolled
+            ? ""
+            : ""
+        }`}
+      >
+        <div className="max-w-screen-xl mx-auto flex items-center justify-between py-6 px-5  text-white">
+          <Link to="/" className="font-heading text-2xl font-bold">
+            Material World
+          </Link>
+          <div className="flex gap-3">
+            <ul
+              className={`md:flex md:relative md:p-0 items-center md:space-x-8 absolute bg-black p-5 sm:w-[50vw] z-[2222222222]   xs:left-[-1000%] hidden top-[30%] ${
+                isNavOpened ? "myNav" : "defaultNav"
+              }`}
             >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+              <li className="">
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/Blogs">Blogs</Link>
+              </li>
+              <li>
+                <Link to="/Politics">Politics</Link>
+              </li>
+              <li>
+                <Link to="/Sports">Sports</Link>
+              </li>
+              <li>
+                <Link to="/Health">Health</Link>
+              </li>
+              <li>
+                <Link to="/About">About</Link>
+              </li>
+            </ul>
+            <button className="md:hidden" onClick={handleNav}>
+              <BiMenu />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
+export default Header;
