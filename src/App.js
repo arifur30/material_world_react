@@ -9,6 +9,7 @@ import Footer from "./component/Footer";
 import Header from "./component/Header";
 import TopStories from "./component/TopStories";
 import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
 
 
 
@@ -18,23 +19,10 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-
-
           <Route path='/' element={<Home />} />
+          <Route path='/' element={<Blogs />} />
         </Routes>
       </BrowserRouter>
-      {/* <Router>
-       <Header/>
-        <Banner />
-        <TopStories />
-        <LatestNews/>
-        <Routes>
-       
-        <Route path="/profile" element={<Profile/>}></Route>
-        <Route path="/offers" element={<Offers/>}></Route>
-        </Routes>
-        <Footer/>
-      </Router> */}
     </>
   );
 }
