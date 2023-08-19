@@ -5,7 +5,8 @@ import NewsBodyRight from './NewsBodyRight';
 
 const NewsBody = () => {
     return (
-       <Box sx={{display:'flex',width:'100%'}}>
+        <>
+       <Box sx={{display:{xs:'none',lg:'flex',sm:'flex'},width:'100%'}}>
         <Box sx={{width:'75%'}}>
             <NewsBodyLeft/>
             <NewsBodyLeft/>
@@ -18,6 +19,20 @@ const NewsBody = () => {
 
         </Box>
        </Box>
+     
+
+       <Box sx={{display:{xs:'flex',lg:'none',sm:'none'},width:'100%'}}>
+        <Box sx={{width:'100%'}}>
+            <NewsBodyLeft/>
+            <NewsBodyLeft/>
+            <NewsBodyLeft/>
+            <NewsBodyLeft/>
+       
+        </Box>
+       
+       </Box>
+
+       </>
     );
 };
 
