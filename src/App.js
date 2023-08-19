@@ -10,6 +10,7 @@ import Header from "./component/Header";
 import TopStories from "./component/TopStories";
 import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
+import News from "./pages/News/News";
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/' element={<Blogs />} />
+          <Route path="/news" element={<News/>}></Route>
         </Routes>
       </BrowserRouter>
     </>
