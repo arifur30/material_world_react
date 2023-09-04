@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className="lg:pl-20 font-open text-[#ced1de] bg-[#1e1f24] mt-auto">
+    <footer className="lg:pl-20 font-open text-[#ced1de] py-5 bg-[#1e1f24] mt-auto">
     <div className="container px-5 py-19 mx-auto">
     <div className="flex flex-wrap md:text-left text-center order-first">
       <div className="lg:w-2.5/4 md:w-1/2 w-full lg:pt-28">
