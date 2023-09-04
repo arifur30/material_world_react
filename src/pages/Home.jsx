@@ -8,8 +8,8 @@ import Banner from './Banner'
 export default function Home() {
   return (
     <>
-      <TopStories />
       <Banner />
+      <TopStories />
     </>
   )
 }
