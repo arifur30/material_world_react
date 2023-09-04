@@ -23,6 +23,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/' element={<Blogs />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
