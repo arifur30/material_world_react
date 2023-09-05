@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import AddBusinessRoundedIcon from "@mui/icons-material/AddBusinessRounded";
 import DrawerComp from "./Drawer";
-const Header = () => {
+const Header2 = () => {
   const [value, setValue] = useState();
   const pages = ["Home", "Business", "World", "OP-Ed", "Politics"];
   const theme = useTheme();
@@ -52,4 +52,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header2;

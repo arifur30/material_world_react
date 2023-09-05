@@ -5,9 +5,9 @@ import { FaTwitter } from "react-icons/fa";
 import { AiOutlineWifi } from "react-icons/ai";
 const LatestNews = () => {
   return (
-    <div className="latest_news flex max-w-screen-xl py-8 m-auto gap-2">
-      <div className="left-side w-4/6">
-        <div className="flex items-center justify-between">
+    <div className="latest_news md:flex max-w-screen-xl py-8 m-auto gap-2 px-4 md:px-0">
+      <div className="left-side md:w-4/6">
+        <div className="md:flex items-center justify-between">
           <h3 className="uppercase text-black text-xl font-bold">
             latest news
           </h3>
@@ -24,7 +24,7 @@ const LatestNews = () => {
             )}
           </ul>
         </div>
-        <div className="flex mt-4">
+        <div className="md:flex mt-4">
           <img
             src="https://rstheme.com/products/html/news24/news-magazine/images/tab/1.jpg"
             alt=""
@@ -54,7 +54,7 @@ const LatestNews = () => {
             </button>
           </div>
         </div>
-        <div className="flex border-2 mt-5 items-center justify-between p-3">
+        <div className="md:flex border-2 mt-5 items-center justify-between p-3">
           {[
             {
               img: "https://rstheme.com/products/html/news24/news-magazine/images/tab/2.jpg",

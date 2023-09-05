@@ -14,6 +14,7 @@ import News from "./pages/News/News";
 
 
 
+
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
           <Route path='/' element={<Blogs />} />
           <Route path="/news" element={<News/>}></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

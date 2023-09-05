@@ -32,16 +32,14 @@ const Banner = () => {
   // };
 
   return (
-    <div className="banner max-w-screen-xl mx-auto">
+    <div className="banner max-w-screen mx-auto">
       <div className="banner-header">
-        <div className="banner-header-slider grid grid-cols-10">
-          <button className=" bg-red-500 capitalize text-white col-span-1 col-start-1">top news</button>
+        <div className="banner-header-slider grid grid-cols-10 ">
+          <button className=" bg-red-500 capitalize text-white col-span-1 col-start-1">
+            top news
+          </button>
           <div className="col-span-9 mr-2 ps-3 col-start-2 bg-black top-banner">
-            <Slider
-            slidesToShow={2}
-            autoplay={true}
-
-            >
+            <Slider slidesToShow={2} autoplay={true}>
               {[
                 {
                   img: "https://rstheme.com/products/html/news24/news-magazine/images/breaking/5.jpg",
@@ -60,10 +58,10 @@ const Banner = () => {
                 return (
                   <div className=" text-white">
                     <div className="flex items-center">
-                    <img src={img} className="max-w-full" alt="" />
-                    <a href="/" className="ms-3">
-                      {heading}
-                    </a> 
+                      <img src={img} className="max-w-full" alt="" />
+                      <a href="/" className="ms-3">
+                        {heading}
+                      </a>
                     </div>
                   </div>
                 );
@@ -72,8 +70,8 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto flex gap-3">
-        <div className="banner-left max-w-[60%]">
+      <div className="mx-auto max-w-screen-xl md:flex gap-3 ">
+        <div className="banner-left md:w-[50%] w-[100%] flex-1">
           <Slider {...settings}>
             {[
               "https://rstheme.com/products/html/news24/news-magazine/images/slider/slide_3.jpg",
@@ -116,7 +114,7 @@ const Banner = () => {
             })}
           </Slider>
         </div>
-        <div className="right-side-news flex flex-col">
+        <div className="right-side-news  flex flex-col">
           {[
             {
               category: "Business",
