@@ -64,7 +64,10 @@ export default function Header() {
                 <Link to="">Blog</Link>
               </li>
               <li className="text-gray-600 hover:text-blue-600">
-                <Link to="/politics">Politics</Link>
+                <Link to="/news/Politics">Politics</Link>
+              </li>
+              <li className="text-gray-600 hover:text-blue-600">
+                <Link to="/news/Education">Education</Link>
               </li>
               <li className="text-gray-600 hover:text-blue-600">
                 <Link to="about">About US</Link>

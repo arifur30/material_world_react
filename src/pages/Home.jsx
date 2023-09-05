@@ -8,10 +8,10 @@ import LatestNews from '../component/LatestNews'
 
 export default function Home() {
   return (
-    <>
+  <>
       <Banner />
       <TopStories />
       <LatestNews />
-    </>
+   </>
   )
 }

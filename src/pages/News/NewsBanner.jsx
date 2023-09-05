@@ -4,7 +4,8 @@ import {Box, Typography} from '@mui/material'
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 
 
-const NewsBanner = () => {
+const NewsBanner = ({cat}) => {
+    
     return (
         <Box sx={{ height: '30vh',marginTop:'-18px'
         }}>
@@ -39,7 +40,7 @@ const NewsBanner = () => {
                 display:'flex',
                 marginLeft:"25px"
           
-            }}>Politics</Typography>
+            }}>{cat}</Typography>
             <Box sx={{display:'flex',fontWeight:'bold','&>*':{
                
                 
@@ -47,7 +48,7 @@ const NewsBanner = () => {
                 marginLeft:"25px"
             }}}>
             <Typography sx={{color:"red",marginLeft:"25px"}}><HomeWorkIcon/>Home</Typography>
-            <Typography>Politics</Typography>
+            <Typography>{cat}</Typography>
             </Box>
          
         </Box>

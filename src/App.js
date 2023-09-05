@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/' element={<Blogs />} />
-          <Route path="/news" element={<News/>}></Route>
+          <Route path="/news/:cat" element={<News/>}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
