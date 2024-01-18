@@ -18,7 +18,7 @@ const NewsBanner = ({cat}) => {
             opacity:'0.8',
             display:'flex',
             flexDirection:"column",
-            width: '100vw',
+            // width: '100vw',
             color:"white",
             
             justifyContent:'center',
@@ -36,9 +36,10 @@ const NewsBanner = ({cat}) => {
             
  
         }}>
-            <Typography variant={'h5'} sx={{
+            <Typography variant={'h2'} sx={{
                 display:'flex',
-                marginLeft:"25px"
+                marginLeft:"25px",
+                font:"bold"
           
             }}>{cat}</Typography>
             <Box sx={{display:'flex',fontWeight:'bold','&>*':{

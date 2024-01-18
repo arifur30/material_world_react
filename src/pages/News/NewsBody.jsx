@@ -24,7 +24,7 @@ const NewsBody = ({news}) => {
        </Box>
      
 
-       <Box sx={{display:{xs:'flex',lg:'none',sm:'none'},width:'100%'}}>
+       <Box sx={{display:{xs:'flex',lg:'none',sm:'none'},}}>
         <Box sx={{width:'100%'}}>
         {news && news.map((item)=>(
                   <NewsBodyLeft item={item}/>

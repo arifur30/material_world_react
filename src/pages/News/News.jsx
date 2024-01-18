@@ -19,7 +19,7 @@ const News = () => {
         }
         getData()
 
-    },[])
+    },[cat])
     return (
         <Grid container sx={{marginTop:'20px'}}>
             <Grid item xs={12} >

@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { IoIosArrowDown } from "react-icons/io";
 export default function Header() {
   const [navbar, setNavbar] = useState(false);
+  const [open,setOpen]=useState(false);
+  const cat=['Politics','Education','Agriculture','Sports']
 
   return (
-    <nav className="w-full bg-white shadow">
+    <nav className="w-70% bg-white shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -63,11 +65,21 @@ export default function Header() {
               <li className="text-gray-600 hover:text-blue-600">
                 <Link to="">Blog</Link>
               </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link to="/news/Politics">Politics</Link>
-              </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link to="/news/Education">Education</Link>
+              <li>
+              <button className={'flex justify items-center'}onClick={()=>setOpen(!open)}>News<span><IoIosArrowDown/></span></button>
+                <div className={`${open?'block':'hidden'} xl:absolute top-19.5 bg-white rounded rounded-5 z-10   px-[20px] py-[10px]`}>
+                
+                  <ul >
+                    {
+                      cat.map((item)=>(
+                        <Link to={`/news/${item}`}><li onClick={()=>setOpen(false)}className="text-black my-2 hover:bg-gray-500 hover:text-white pr-5 pl-2">{item}</li></Link>
+
+                      ))
+                    }
+
+
+                  </ul>
+                </div>
               </li>
               <li className="text-gray-600 hover:text-blue-600">
                 <Link to="about">About US</Link>

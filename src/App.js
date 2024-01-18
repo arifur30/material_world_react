@@ -11,6 +11,7 @@ import TopStories from "./component/TopStories";
 import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import News from "./pages/News/News";
+import NewsDetails from "./pages/News/NewsDetails";
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/' element={<Blogs />} />
           <Route path="/news/:cat" element={<News/>}></Route>
+          <Route path="/news/details/:id" element={<NewsDetails/>}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
