@@ -16,24 +16,32 @@ import {withRouter} from "react-router-dom"
 import { useLocation } from "react-router-dom";
 import Layout from "./component/Layout";
 
+import ReactGA from 'react-ga'
 
 
 
 function App() {
+  useEffect(() => {
+   
+    const TRACKING_ID =  'UA-263820946-4';
+      ReactGA.initialize(TRACKING_ID);
+    
+    ReactGA.pageview(window.location.pathname)
+  }, [window.location.pathname]);
   
   return (
     <>
-      
+      <Header/>
        
         <Routes>
          
-          <Route path='/' element={<Layout><Home /></Layout>} />
-          <Route path='/' element={<Layout><Blogs /></Layout>} />
-          <Route path="/news/:cat" element={<Layout><News/></Layout>}></Route>
-          <Route path="/news/details/:id" element={<Layout><NewsDetails/></Layout>}></Route>
-          <Route path="/dev" element={<Layout><Developers/></Layout>}></Route>
+          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Blogs />} />
+          <Route path="/news/:cat" element={<News/>}></Route>
+          <Route path="/news/details/:id" element={<NewsDetails/>}></Route>
+          <Route path="/dev" element={<Developers/>}></Route>
         </Routes>
-       
+       <Footer/>
       
     </>
   );
