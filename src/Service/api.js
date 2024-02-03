@@ -29,4 +29,51 @@ export const getDetails=async(id)=>{
     }
 
 }
+export const getAllData=async()=>{
+    try{
+        const result=await axios.get(`${url}/api/blogs`);
 
+        return result.data;
+
+    }
+    catch(error){
+        return error;
+    }
+
+}
+export const getInternationalOne=async()=>{
+    try{
+        const result=await axios.get(`${url}/api/blogs/one/international`);
+
+        return result.data;
+
+    }
+    catch(error){
+        return error;
+    }
+
+}
+export const getNationalOne=async()=>{
+    try{
+        const result=await axios.get(`${url}/api/blogs/one/national`);
+
+        return result.data;
+
+    }
+    catch(error){
+        return error;
+    }
+
+}
+export const getPoliticalOne=async()=>{
+    try{
+        const result=await axios.get(`${url}/api/blogs/one/politics`);
+
+        return result.data;
+
+    }
+    catch(error){
+        return error;
+    }
+
+}

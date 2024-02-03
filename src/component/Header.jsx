@@ -1,18 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
-export default function Header() {
+import { useEffect } from "react";
+import {withRouter} from 'react-router-dom'
+export default function Header({history}) {
   const [navbar, setNavbar] = useState(false);
   const [open,setOpen]=useState(false);
   const cat=['Politics','Education','Agriculture','Sports']
+  useEffect(()=>{
+ console.log(window.location.pathname)
+
+  },[])
 
   return (
-    <nav className="w-70% bg-white shadow">
+    <nav className="w-70% bg-transparent shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="/">
-              <h2 className="text-2xl font-bold">THE MATERIAL WORLD</h2>
+            <h2 className="text-2xl font-bold">THE MATERIAL WORLD</h2>
             </Link>
             <div className="md:hidden">
               <button
