@@ -5,6 +5,11 @@ import { getDetails } from "../../Service/api";
 import { Box, Typography } from "@mui/material";
 import textversion from "textversionjs";
 import ReactGA from "react-ga"
+import { useLocation } from "react-router-dom";
+
+// Initialize React Ga with your tracking ID
+ReactGA.initialize('G-EG45KTGWNE');
+
 
 const NewsDetails = () => {
 const {id}=useParams();
@@ -31,13 +36,10 @@ const {id}=useParams();
     };
     getAll();
   }, [id]);
+  const location = useLocation();
   useEffect(() => {
-   
-    const TRACKING_ID =  'UA-263820946-4';
-      ReactGA.initialize(TRACKING_ID);
-    
-    ReactGA.pageview(window.location.pathname)
-  }, []);
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location]);
 
   return (
     <Box sx={{display:'flex',flexDirection:'column', paddingY:"10px",'&>*':{
