@@ -27,7 +27,7 @@ function App() {
       ReactGA.initialize(TRACKING_ID);
     
     ReactGA.pageview(window.location.pathname)
-  }, [window.location.pathname]);
+  }, []);
   
   return (
     <>

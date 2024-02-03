@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { getDetails } from "../../Service/api";
 import { Box, Typography } from "@mui/material";
 import textversion from "textversionjs";
+import ReactGA from "react-ga"
 
 const NewsDetails = () => {
 const {id}=useParams();
@@ -30,6 +31,13 @@ const {id}=useParams();
     };
     getAll();
   }, [id]);
+  useEffect(() => {
+   
+    const TRACKING_ID =  'UA-263820946-4';
+      ReactGA.initialize(TRACKING_ID);
+    
+    ReactGA.pageview(window.location.pathname)
+  }, []);
 
   return (
     <Box sx={{display:'flex',flexDirection:'column', paddingY:"10px",'&>*':{
