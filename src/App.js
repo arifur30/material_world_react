@@ -10,35 +10,30 @@ import News from "./pages/News/News";
 import NewsDetails from "./pages/News/NewsDetails";
 import Developers from "./pages/Developers"
 import { useEffect } from "react";
-import ReactGA from 'react-4'
+
+import {withRouter} from "react-router-dom"
 
 import { useLocation } from "react-router-dom";
+import Layout from "./component/Layout";
 
 
 
 
 function App() {
-  const location = useLocation();
-  useEffect(() => {
-   
-    const TRACKING_ID =  'G-BE6F4B2VMY';
-      ReactGA.initialize(TRACKING_ID);
-    console.log(location)
-    ReactGA.send("pageview")
-  }, [location]);
+  
   return (
     <>
       
-        <Header />
+       
         <Routes>
          
-          <Route path='/' element={<Home />} />
-          <Route path='/' element={<Blogs />} />
-          <Route path="/news/:cat" element={<News/>}></Route>
-          <Route path="/news/details/:id" element={<NewsDetails/>}></Route>
-          <Route path="/dev" element={<Developers/>}></Route>
+          <Route path='/' element={<Layout><Home /></Layout>} />
+          <Route path='/' element={<Layout><Blogs /></Layout>} />
+          <Route path="/news/:cat" element={<Layout><News/></Layout>}></Route>
+          <Route path="/news/details/:id" element={<Layout><NewsDetails/></Layout>}></Route>
+          <Route path="/dev" element={<Layout><Developers/></Layout>}></Route>
         </Routes>
-        <Footer />
+       
       
     </>
   );
