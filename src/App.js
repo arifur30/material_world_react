@@ -10,7 +10,7 @@ import News from "./pages/News/News";
 import NewsDetails from "./pages/News/NewsDetails";
 import Developers from "./pages/Developers"
 import { useEffect } from "react";
-import ReactGA from 'react-ga'
+import ReactGA from 'react-4'
 
 import { useLocation } from "react-router-dom";
 
@@ -19,10 +19,12 @@ import { useLocation } from "react-router-dom";
 
 function App() {
   const location = useLocation();
-  const TRACKING_ID =  'G-BE6F4B2VMY';
-    ReactGA.initialize(TRACKING_ID);
   useEffect(() => {
-    ReactGA.pageview(location.pathname + location.search);
+   
+    const TRACKING_ID =  'G-BE6F4B2VMY';
+      ReactGA.initialize(TRACKING_ID);
+    console.log(location)
+    ReactGA.send("pageview")
   }, [location]);
   return (
     <>
